@@ -1,0 +1,70 @@
+/* Smooth animation for header navigation */
+nav a {
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #d4a373;
+}
+
+/* Animate plant cards */
+.plant-card {
+    transition: transform 0.3s ease;
+}
+
+/* Smooth scale animation for icons */
+footer img {
+    transition: transform 0.3s ease;
+}
+
+/* Bounce animation for homepage heading */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+#home h2 {
+    animation: bounce 2s infinite;
+}
+/* Fade-in animation with slide up effect */
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the fade-in animation */
+.animate-fade-in {
+    animation: fade-in-up 1s ease-in-out forwards;
+}
+/* Smooth hover animation for scaling icons */
+.social-icon img {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animation for fade-in on load */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the fade-in animation */
+footer {
+    animation: fade-in 1s ease-in-out;
+}
+

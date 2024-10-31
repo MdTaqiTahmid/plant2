@@ -1,0 +1,253 @@
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Paradise</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.5.0/alpine.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-green-50 text-gray-800 ">
+    <!-- Header -->
+    <header class="bg-green-600 text-white py-4 pb-12 pt-12">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-4xl font-bold">Plant Paradise</h1>
+            <nav>
+                <a href="#home" class="mx-4 hover:underline text-2xl font-bold">Home</a>
+                <a href="#gallery" class="mx-4 hover:underline text-2xl font-bold">Gallery</a>
+                <a href="#care" class="mx-4 hover:underline text-2xl font-bold">Plant Care</a>
+                <a href="#contact" class="mx-4 hover:underline text-2xl font-bold">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="py-12 text-center">
+            <h2 class="text-4xl font-bold animate__animated animate__fadeIn">Welcome to Our Plant Paradise</h2>
+            <p class="mt-4 text-lg">Discover beautiful plants for your home and garden.</p>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-12">
+            <h2 class="text-3xl font-bold text-center mb-6">Our Plant Collection</h2>
+            <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
+                <div class="plant-card overflow-hidden rounded-lg shadow-lg hover:scale-105 transform transition">
+                    <img src="Capture33.PNG" alt="Plant 1" class="w-full h-60 object-cover">
+                    <p class="text-center py-2">Fiddle Leaf Fig</p>
+                </div>
+                <div class="plant-card overflow-hidden rounded-lg shadow-lg hover:scale-105 transform transition">
+                    <img src="Capture22.PNG" alt="Plant 2" class="w-full h-60 object-cover">
+                    <p class="text-center py-2">Snake Plant</p>
+                </div>
+                <div class="plant-card overflow-hidden rounded-lg shadow-lg hover:scale-105 transform transition">
+                    <img src="Captureww.PNG" alt="Plant 3" class="w-full h-60 object-cover">
+                    <p class="text-center py-2">Monstera</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plant Care Tips Section -->
+        <section id="care" class="py-12 bg-green-100">
+            <h2 class="text-3xl font-bold text-center mb-6">Plant Care Tips</h2>
+            <ul class="list-disc max-w-lg mx-auto space-y-4">
+                <li>Water plants regularly but avoid over-watering.</li>
+                <li>Provide adequate sunlight based on plant needs.</li>
+                <li>Use quality soil for better growth.</li>
+                <li>Prune dead leaves to encourage growth.</li>
+            </ul>
+        </section>
+    </main>
+    <style>
+        /* Custom CSS for hover zoom effect */
+        .hover-zoom:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <!-- Image Gallery Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Our Gallery</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Image 1 -->
+                <div class="hover-zoom overflow-hidden rounded-lg shadow-lg">
+                    <img src="Capture55.PNG" alt="Image 1" class="w-full h-72 object-cover transition-transform duration-300">
+                </div>
+
+                <!-- Image 2 -->
+                <div class="hover-zoom overflow-hidden rounded-lg shadow-lg">
+                    <img src="Capture88.PNG" alt="Image 2" class="w-full h-72 object-cover transition-transform duration-300">
+                </div>
+
+                <!-- Image 3 -->
+                <div class="hover-zoom overflow-hidden rounded-lg shadow-lg">
+                    <img src="Capture99.PNG" alt="Image 3" class="w-full h-72 object-cover transition-transform duration-300">
+                </div>
+
+                <!-- Image 4 -->
+                <div class="hover-zoom overflow-hidden rounded-lg shadow-lg">
+                    <img src="Capture66.PNG" alt="Image 4" class="w-full h-72 object-cover transition-transform duration-300">
+                </div>
+
+            </div>
+        </div>
+    </section>
+<!-- Lightbox Modal -->
+<div id="lightbox-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
+    <div class="relative">
+        <img id="lightbox-image" src="" alt="Large Image" class="max-w-full max-h-full rounded-lg shadow-lg">
+        <button onclick="closeLightbox()" class="absolute top-2 right-2 text-white text-2xl">&times;</button>
+    </div>
+</div>
+
+<script>
+    // Function to open lightbox
+    function openLightbox(src) {
+        document.getElementById("lightbox-image").src = src;
+        document.getElementById("lightbox-modal").classList.remove("hidden");
+    }
+
+    // Function to close lightbox
+    function closeLightbox() {
+        document.getElementById("lightbox-modal").classList.add("hidden");
+    }
+
+    // Attach click event to each image to open lightbox
+    document.querySelectorAll('.hover-zoom img').forEach(img => {
+        img.addEventListener('click', () => openLightbox(img.src));
+    });
+</script>
+<div class="container mx-auto pb-12">
+    <h2 class="text-3xl font-bold text-center mb-10">Our Happy Clients</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+        <!-- Client Profile 1 -->
+        <div class="bg-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105">
+            <div class="flex flex-col items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-20">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  </svg>
+                  
+                <h3 class="text-xl font-semibold">Client Name 1</h3>
+                <p class="text-gray-500 mb-2">CEO at Company 1</p>
+                <p class="text-gray-600 text-center">"Working with this team has transformed our business. Their expertise and dedication are unmatched!"</p>
+            </div>
+        </div>
+        <!-- Client Profile 2 -->
+        <div class="bg-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105">
+            <div class="flex flex-col items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-20">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  </svg>
+                <h3 class="text-xl font-semibold">Client Name 2</h3>
+                <p class="text-gray-500 mb-2">CTO at Company 2</p>
+                <p class="text-gray-600 text-center">"The service and support we received were excellent. Highly recommend!"</p>
+            </div>
+        </div>
+    </div>
+</div>
+      
+    <!-- Footer Section -->
+    <footer class="bg-green-700 text-white py-12">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+
+            <!-- Social Media Icons with Animation -->
+            <div class="flex space-x-6">
+                <a href="#" class="social-icon hover:scale-110 transition transform duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-9 h-9 fill-current text-black-600">
+                        <path d="M22.675 0H1.325C.593 0 0 .592 0 1.324v21.351C0 23.407.592 24 1.325 24h11.495v-9.294H9.692V11.07h3.128V8.413c0-3.1 1.893-4.788 4.657-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.714-1.796 1.76v2.308h3.587l-.467 3.637h-3.12V24h6.116c.73 0 1.323-.592 1.323-1.325V1.324C24 .592 23.407 0 22.675 0z"/>
+                    </svg>
+                    
+                </a>
+                    
+                </a>
+                <a href="#" class="social-icon hover:scale-110 transition transform duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-9 h-9 fill-current ">
+                        <path d="M23.953 4.569a10 10 0 0 1-2.825.775 4.93 4.93 0 0 0 2.163-2.723 9.86 9.86 0 0 1-3.127 1.195 4.92 4.92 0 0 0-8.384 4.482 13.978 13.978 0 0 1-10.15-5.145 4.822 4.822 0 0 0 1.523 6.574A4.903 4.903 0 0 1 .96 8.852v.06a4.924 4.924 0 0 0 3.95 4.827 4.935 4.935 0 0 1-2.212.084 4.93 4.93 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.1 2.102c-.395 0-.785-.023-1.17-.067a13.933 13.933 0 0 0 7.557 2.212c9.054 0 14.004-7.496 14.004-13.986 0-.21 0-.42-.016-.63a9.936 9.936 0 0 0 2.457-2.548z"/>
+                    </svg>
+                                        
+                </a>
+                <a href="#" class="social-icon hover:scale-110 transition transform duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-9 h-9 fill-current ">
+                        <path d="M22.23 0H1.77C.792 0 0 .774 0 1.73v20.54C0 23.226.792 24 1.77 24h20.46c.978 0 1.77-.774 1.77-1.73V1.73C24 .774 23.208 0 22.23 0zM7.12 20.452H3.56V9.045h3.56v11.407zM5.34 7.535a2.074 2.074 0 1 1 0-4.148 2.074 2.074 0 0 1 0 4.148zm15.113 12.917h-3.56v-5.554c0-1.326-.027-3.03-1.844-3.03-1.845 0-2.127 1.442-2.127 2.93v5.654h-3.56V9.045h3.415v1.553h.05c.476-.9 1.637-1.846 3.366-1.846 3.6 0 4.266 2.368 4.266 5.448v6.252z"/>
+                    </svg>
+                    
+                </a>
+            </div>
+            <!-- Contact Information -->
+            <div class="text-center">
+                <p class="text-lg font-semibold">Contact Us</p>
+                <p>Email: info@plantparadise.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+                <p>Address: 123 Plant St., Green City, GA</p>
+            </div>
+
+            <!-- Website Details -->
+            <div class="text-center md:text-right">
+                <h4 class="text-xl font-bold mb-2">About Plant Paradise</h4>
+                <p class="text-sm">We are dedicated to providing the best plant care services and high-quality plants. Visit us for all your gardening needs.</p>
+                <p class="text-xs mt-4">&copy; 2024 Plant Paradise. All rights reserved.</p>
+            </div>
+        </div>
+         <!-- Contact Us Section -->
+    <section id="contact" class="py-16 ">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+            <h2 class="text-4xl font-bold text-center text-white mb-6">Contact Us</h2>
+            <p class="text-center text-white mb-12 max-w-2xl mx-auto">We’d love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out to us through the form below.</p>
+            
+            <!-- Contact Form -->
+            <div class="flex flex-col md:flex-row justify-center gap-8">
+                <form class="bg-gray-100 p-8 rounded-lg shadow-lg w-full md:w-1/2">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-green-600 text-white font-semibold py-2 rounded-lg hover:bg-green-500 transition duration-300">Send Message</button>
+                </form>
+
+                <!-- Contact Info -->
+                <div class="flex flex-col justify-center items-start text-gray-700 space-y-4 md:w-1/2">
+                    <div class="flex items-center space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                          </svg>
+                          
+                        <span class="text-lg font-medium text-white">Email: contact@plantparadise.com</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8 text-white" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                          </svg>                                                
+                        <span class="text-lg font-medium text-white">Address: 123 Plant St., Green City, GA</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-2 w-8 text-white">
+                            <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd" />
+                          </svg>
+                          
+                        <span class="text-lg font-medium text-white">Phone: +1 (123) 456-7890</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
